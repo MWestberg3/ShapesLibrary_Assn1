@@ -1,6 +1,6 @@
 import kotlin.math.abs
 
-class Rectangle(private var pointA: Point, private var pointB: Point) {
+open class Rectangle(private var pointA: Point, private var pointB: Point) {
     private val height: Double = abs(pointA.getY - pointB.getY)
     private val width: Double = abs(pointB.getX - pointA.getX)
     private val area: Double = height * width

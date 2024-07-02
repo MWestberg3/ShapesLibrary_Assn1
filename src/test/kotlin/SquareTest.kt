@@ -1,28 +1,28 @@
 import kotlin.test.assertEquals
 import kotlin.test.Test
 
-class RectangleTest {
+class SquareTest {
     private val pointA = Point(0.0, 0.0)
-    private val pointB = Point(3.0, 5.0)
-    private val rectangle = Rectangle(pointA, pointB)
+    private val pointB = Point(5.0, 5.0)
+    private val square = Square(pointA, pointB)
     @Test
-    fun testRectangle() {
-        assertEquals(pointA.getX, rectangle.getPointA.getX)
-        assertEquals(pointB.getX, rectangle.getPointB.getX)
-        assertEquals(pointA.getY, rectangle.getPointA.getY)
-        assertEquals(pointB.getY, rectangle.getPointB.getY)
+    fun testSquare() {
+        assertEquals(pointA.getX, square.getPointA.getX)
+        assertEquals(pointB.getX, square.getPointB.getX)
+        assertEquals(pointA.getY, square.getPointA.getY)
+        assertEquals(pointB.getY, square.getPointB.getY)
     }
     @Test
     fun testArea() {
-        assertEquals(15.0, rectangle.getArea())
+        assertEquals(25.0, square.getArea())
     }
     @Test
-    fun testMoveRectangle() {
-        rectangle.moveRectangle(1.0, 1.0)
-        assertEquals(1.0, rectangle.getPointA.getX)
-        assertEquals(1.0, rectangle.getPointA.getY)
-        assertEquals(4.0, rectangle.getPointB.getX)
-        assertEquals(6.0, rectangle.getPointB.getY)
+    fun testMoveSquare() {
+        square.moveRectangle(2.0, 1.0)
+        assertEquals(2.0, square.getPointA.getX)
+        assertEquals(1.0, square.getPointA.getY)
+        assertEquals(7.0, square.getPointB.getX)
+        assertEquals(6.0, square.getPointB.getY)
     }
     @Test
     fun testMovePointAndCheckArea() {
