@@ -1,22 +1,20 @@
-package org.example
-
 import kotlin.math.pow
 import kotlin.math.sqrt
 
 class Line(private var start: Point, private var end: Point) {
-    private var length: Double = sqrt((end.getX() - start.getX()).pow(2.0) + (end.getY() - start.getY()).pow(2.0))
-    private var slope: Double = (end.getY() - start.getY()) / (end.getX() - start.getX())
+    private val length = sqrt((end.getX - start.getX).pow(2.0) + (end.getY - start.getY).pow(2.0))
+    private val slope = (end.getY - start.getY) / (end.getX - start.getX)
 
     init {
-        require(this.length != 0.0) { "Line length cannot be zero."}
+        require(getLength() != 0.0) { "Line length cannot be zero."}
     }
 
-    fun getStart(): Point {
-        return start
-    }
-    fun getEnd(): Point {
-        return end
-    }
+    val getStart: Point
+        get() = start.clone()
+
+    val getEnd: Point
+        get() = end.clone()
+
     fun getSlope(): Double {
         return slope
     }

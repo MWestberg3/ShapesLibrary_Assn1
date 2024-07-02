@@ -1,20 +1,29 @@
-package org.example
-
-class Rectangle(private var width: Line, private var height: Line) {
-    fun getWidth(): Line {
-        return width
-    }
-
-    fun getHeight(): Line {
-        return height
-    }
-
-    fun getArea(): Double {
-        return width.getLength() * height.getLength()
-    }
-
-    fun moveRectangle(dX: Double, dY: Double) {
-        width.moveLine(dX, dY)
-        height.moveLine(dX, dY)
-    }
-}
+//package org.example
+//
+//class Rectangle(private var topLeft: Point, private var bottomRight: Point) {
+//    private val heightLine = Line(topLeft, Point(topLeft.getX(), bottomRight.getY()))
+//    private val widthLine = Line(topLeft, Point(bottomRight.getX(), topLeft.getY()))
+//
+//    fun getTopLeft(): Point {
+//        return topLeft
+//    }
+//    fun getBottomRight(): Point {
+//        return bottomRight
+//    }
+//    fun getWidth(): Double {
+//        return widthLine.getLength()
+//    }
+//
+//    fun getHeight(): Double {
+//        return heightLine.getLength()
+//    }
+//
+//    fun getArea(): Double {
+//        return getWidth() * getHeight()
+//    }
+//
+//    fun moveRectangle(dX: Double, dY: Double) {
+//        widthLine.moveLine(dX, dY)
+//        heightLine.moveLine(dX, dY)
+//    }
+//}
