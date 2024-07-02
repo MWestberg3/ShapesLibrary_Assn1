@@ -1,29 +1,25 @@
-//package org.example
-//
-//class Rectangle(private var topLeft: Point, private var bottomRight: Point) {
-//    private val heightLine = Line(topLeft, Point(topLeft.getX(), bottomRight.getY()))
-//    private val widthLine = Line(topLeft, Point(bottomRight.getX(), topLeft.getY()))
-//
-//    fun getTopLeft(): Point {
-//        return topLeft
-//    }
-//    fun getBottomRight(): Point {
-//        return bottomRight
-//    }
-//    fun getWidth(): Double {
-//        return widthLine.getLength()
-//    }
-//
-//    fun getHeight(): Double {
-//        return heightLine.getLength()
-//    }
-//
-//    fun getArea(): Double {
-//        return getWidth() * getHeight()
-//    }
-//
-//    fun moveRectangle(dX: Double, dY: Double) {
-//        widthLine.moveLine(dX, dY)
-//        heightLine.moveLine(dX, dY)
-//    }
-//}
+import kotlin.math.abs
+
+class Rectangle(private var pointA: Point, private var pointB: Point) {
+    private val height: Double = abs(pointA.getY - pointB.getY)
+    private val width: Double = abs(pointB.getX - pointA.getX)
+    private val area: Double = height * width
+
+    init {
+        require(height != 0.0 && width != 0.0) { "Rectangle height and width cannot be zero."}
+    }
+
+    val getPointA: Point
+        get() = pointA.clone()
+
+    val getPointB: Point
+        get() = pointB.clone()
+
+    fun getArea(): Double {
+        return area
+    }
+    fun moveRectangle(dX: Double, dY: Double) {
+        pointA.move(dX, dY)
+        pointB.move(dX, dY)
+    }
+}
