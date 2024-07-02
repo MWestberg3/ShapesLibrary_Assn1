@@ -23,6 +23,16 @@ class LineTest {
         }
     }
     @Test
+    fun testUndefinedSlope() {
+        val start = Point(1.0, 1.0)
+        val end = Point(1.0, 2.0)
+        try {
+            Line(start, end)
+        } catch (e: IllegalArgumentException) {
+            assertEquals("Slope is undefined.", e.message)
+        }
+    }
+    @Test
     fun testSlope() {
         val start = Point(1.0, 1.0)
         val end = Point(6.5, 6.5)

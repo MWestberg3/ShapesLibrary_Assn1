@@ -7,6 +7,7 @@ class Line(private var start: Point, private var end: Point) {
 
     init {
         require(getLength() != 0.0) { "Line length cannot be zero."}
+        require(end.getX - start.getX != 0.0) { "Slope is undefined."}
     }
 
     val getStart: Point
