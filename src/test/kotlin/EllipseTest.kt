@@ -1,5 +1,5 @@
-import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
+import kotlin.test.Test
 
 class EllipseTest {
     private val center = Point(0.0, 0.0)
