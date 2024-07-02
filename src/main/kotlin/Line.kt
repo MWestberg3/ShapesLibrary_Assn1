@@ -5,6 +5,11 @@ import kotlin.math.sqrt
 
 class Line(private var start: Point, private var end: Point) {
     private var length: Double = sqrt((end.getX() - start.getX()).pow(2.0) + (end.getY() - start.getY()).pow(2.0))
+    private var slope: Double = (end.getY() - start.getY()) / (end.getX() - start.getX())
+
+    init {
+        require(this.length != 0.0) { "Line length cannot be zero."}
+    }
 
     fun getStart(): Point {
         return start
@@ -13,7 +18,7 @@ class Line(private var start: Point, private var end: Point) {
         return end
     }
     fun getSlope(): Double {
-        return (end.getY() - start.getY()) / (end.getX() - start.getX())
+        return slope
     }
     fun getLength(): Double {
         return length
