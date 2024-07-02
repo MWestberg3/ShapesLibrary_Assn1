@@ -14,10 +14,10 @@ open class Ellipse(private val center: Point, private val radiusAParam: Double, 
     val getCenter: Point
         get() = center.clone()
 
-    val getRadiusX: Double
+    val getRadiusA: Double
         get() = radiusA
 
-    val getRadiusY: Double
+    val getRadiusB: Double
         get() = radiusB
 
     fun moveEllipse(dX: Double, dY: Double) {
