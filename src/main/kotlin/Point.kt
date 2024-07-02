@@ -7,11 +7,11 @@ class Point(private var x: Double, private var y: Double) {
     fun getY(): Double {
         return y
     }
-    fun clonePoint(): Point {
+    fun clone(): Point {
         return Point(x, y)
     }
-    fun movePoint(dx: Double, dy: Double) {
-        x += dx
-        y += dy
+    fun move(dX: Double, dY: Double) {
+        x += dX
+        y += dY
     }
 }

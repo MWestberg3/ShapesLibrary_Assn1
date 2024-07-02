@@ -12,14 +12,14 @@ class PointTest {
     @Test
     fun testClonePoint() {
         val point = Point(1.0, 2.0)
-        val clone = point.clonePoint()
+        val clone = point.clone()
         assertEquals(1.0, clone.getX())
         assertEquals(2.0, clone.getY())
     }
     @Test
     fun testMovePoint() {
         val point = Point(1.0, 2.0)
-        point.movePoint(3.0, 4.0)
+        point.move(3.0, 4.0)
         assertEquals(4.0, point.getX())
         assertEquals(6.0, point.getY())
     }
